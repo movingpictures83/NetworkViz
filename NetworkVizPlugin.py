@@ -12,6 +12,7 @@ class NetworkVizPlugin(CSV2GMLPlugin):
       # Three files will be created in addition to the output file:
       # GML file for the network, EDA file for network edges, 
       # NOA file for the clusters.
+      self.cysfile = filename+".cys"
       self.gmlfile = filename+".gml"
       self.edafile = filename+".eda"
       self.csvfile = filename+".clusters.csv"
@@ -44,12 +45,12 @@ class NetworkVizPlugin(CSV2GMLPlugin):
       CSV2GMLPlugin.output(self, self.gmlfile)
 
       filestuff2 = open(filename, 'w')
-      filestuff2.write("session open file=\"pluma_viz.cys\"\n")
+      filestuff2.write("session open file=\""+self.cysfile+"\"\n")
       filestuff2.write("network load file file=\""+self.gmlfile+"\"\n")
       filestuff2.write("table import file file=\""+self.edafile+"\" DataTypeTargetForNetworkCollection=\"Edge Table Columns\" keyColumnIndex=1 firstRowAsColumnNames=true startLoadRow=1 delimiters=\"\\t\"\n")
       filestuff2.write("table import file file=\""+self.noafile+"\" DataTypeTargetForNetworkCollection=\"Node Table Columns\" keyColumnIndex=1 firstRowAsColumnNames=true startLoadRow=1\n")
       filestuff2.write("layout allegro-fruchterman-reingold EdgeAttribute=\"mappedWeight\" defaultEdgeWeight=0 randomize=true useNormalizedEdgeWeight=false\n")
-     
+      filestuff2.close()
       cytoscape = find_executable("cytoscape.sh")
       if (cytoscape):
          os.system("cytoscape.sh -S "+filename)  
