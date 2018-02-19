@@ -1,3 +1,7 @@
+import PyPluMA
+PyPluMA.dependency("ClusterCSV2NOA")
+PyPluMA.dependency("CSV2GML")
+
 import sys
 import os
 import math
