@@ -55,9 +55,9 @@ class NetworkVizPlugin(CSV2GMLPlugin):
       filestuff2.write("table import file file=\""+self.noafile+"\" DataTypeTargetForNetworkCollection=\"Node Table Columns\" keyColumnIndex=1 firstRowAsColumnNames=true startLoadRow=1\n")
       filestuff2.write("layout allegro-fruchterman-reingold EdgeAttribute=\"mappedWeight\" defaultEdgeWeight=0 randomize=true useNormalizedEdgeWeight=false\n")
       filestuff2.close()
-      cytoscape = find_executable("cytoscape.sh")
-      if (cytoscape):
-         os.system("cytoscape.sh -S "+filename)  
+      #cytoscape = find_executable("cytoscape.sh")
+      #if (cytoscape):
+      #   os.system("cytoscape.sh -S "+filename)  
       
       
  
