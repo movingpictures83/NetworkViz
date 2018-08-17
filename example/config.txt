@@ -1,0 +1,3 @@
+Prefix plugins/NetworkViz/example/
+Plugin NetworkViz inputfile corrP outputfile corrP.bat
+

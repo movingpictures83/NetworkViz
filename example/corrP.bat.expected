@@ -1,0 +1,5 @@
+session open file="plugins/NetworkViz/example//corrP.cys"
+network load file file="plugins/NetworkViz/example//corrP.gml"
+table import file file="plugins/NetworkViz/example//corrP.eda" DataTypeTargetForNetworkCollection="Edge Table Columns" keyColumnIndex=1 firstRowAsColumnNames=true startLoadRow=1 delimiters="\t"
+table import file file="plugins/NetworkViz/example//corrP.clusters.noa" DataTypeTargetForNetworkCollection="Node Table Columns" keyColumnIndex=1 firstRowAsColumnNames=true startLoadRow=1
+layout allegro-fruchterman-reingold EdgeAttribute="mappedWeight" defaultEdgeWeight=0 randomize=true useNormalizedEdgeWeight=false
