@@ -1,9 +1,9 @@
 # NetworkViz
 # Language: Python
-# Dependencies: ClusterCSV2NOA  CSV2GML 
 # Input: prefix (network and cluster CSV files, and CYS file)
 # Output: BAT or COM (input file for Cytoscape)
-# Tested with: PluMA 1.0, Python 2.7, Cytoscape 3.2.1
+# Tested with: PluMA 1.1, Python 3.6
+# Dependencies: distutils==3.6.7, Plugins ClusterCSV2NOA, CSV2GML 
 
 PluMA plugin to visualize a network with Cytoscape, starting from CSV file format.
 This saves the need to use multiple stages to convert to GML, NOA and other
